@@ -2,12 +2,13 @@
 #include <fstream>
 #include <algorithm>
 #include <iomanip>
-#define PeopleNum 12
+#define PeopleNum 14
 using namespace std;
 struct Competitors{
     char Number[10];
     char Name[10];
     char Sex[10];
+    char Major[20];	
     char Class;
     char QQnumber[11];
     float AvgScore;
@@ -66,6 +67,7 @@ int main()
             Competitor >> Competitors[i].Number
             >> Competitors[i].Name
             >> Competitors[i].Sex
+            >> Competitors[i].Major
             >> Competitors[i].Class
             >> Competitors[i].QQnumber;
         }
@@ -74,24 +76,34 @@ int main()
     if(Result.is_open())
     {
         sort(Competitors, Competitors + PeopleNum, cmp2);
-        Result << left << setw(5) << "Number "
-        << left << setw(8) << "Name "
+        Result << left << setw(5) << "Rank "
+	<< left << setw(5) << "Number "
+        << left << setw(8) << "StuName "
         << left << setw(8) << "Sex "
+        << left << setw(15) << "Major "
         << left << setw(3) << "Class "
         << left << setw(13) << "QQnumber "
-        << left << setw(8) << "Score "
-        << left << setw(5) << "Rank "
-        << endl;
+        << left << setw(8) << "AvgScore ";
+	for(int i = 0; i < 7; i++)
+        {
+            Result << left << setw(5) << Referees[i].Name << " ";
+        }
+        Result << endl;
         for(int i = 0; i < PeopleNum; i++)
         {
-            Result << left << setw(5) << Competitors[i].Number << " "
+            Result << left << setw(5) << i + 1
+	    << left << setw(5) << Competitors[i].Number << " "
             << left << setw(8) << Competitors[i].Name <<" "
             << left << setw(8) << Competitors[i].Sex <<" "
+            << left << setw(15) << Competitors[i].Major <<" "
             << left << setw(3) << Competitors[i].Class <<" "
             << left << setw(13) << Competitors[i].QQnumber <<" "
-            << left << setw(8) << setprecision(2)<< fixed << Competitors[i].AvgScore <<" "
-            << left << setw(5) << i + 1
-            << endl;
+            << left << setw(8) << setprecision(2)<< fixed << Competitors[i].AvgScore <<" ";
+	    for(int j = 0; j < 7; j++)
+            {
+                Result << left << setw(5)<< Referees[j].Score[i] << "    ";
+            }
+            Result << endl;
         }
         Result.close();
     }
