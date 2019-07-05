@@ -8,7 +8,7 @@ struct Competitors{
     char Number[10];
     char Name[10];
     char Sex[10];
-    int Class;
+    char Class;
     char QQnumber[11];
     float AvgScore;
     float StuScore[7];
@@ -30,9 +30,9 @@ int main()
     float sum = 0;
     struct Competitors Competitors[PeopleNum];
     struct Referees Referees[7];
-    ifstream Competitor("C:/Users/18735266633f/Desktop/Referee-Scores-master/Competitor.txt");
-    ifstream Referee("C:/Users/18735266633f/Desktop/Referee-Scores-master/Referee.txt");
-    ofstream Result("C:/Users/18735266633f/Desktop/Referee-Scores-master/Result.csv");
+    ifstream Competitor("/Users/s20181106115/Desktop/Competitor.txt");
+    ifstream Referee("/Users/s20181106115/Desktop/Referee.txt");
+    ofstream Result("/Users/s20181106115/Desktop/Result.csv");
     if(Referee.is_open())
     {
         for(int i = 0; i < 7; i++)
@@ -49,7 +49,7 @@ int main()
             {
                 Competitors[i].StuScore[j] = Referees[j].Score[i];
             }
-            sort(Competitors[i].StuScore, Competitors[i].StuScore + PeopleNum, cmp1);
+            sort(Competitors[i].StuScore, Competitors[i].StuScore + 7, cmp1);
             for(int k = 1; k < 6; k++)
             {
                 sum += Competitors[i].StuScore[k];
