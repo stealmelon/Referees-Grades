@@ -2,7 +2,7 @@
 #include <fstream>
 #include <algorithm>
 #include <iomanip>
-#define PeopleNum 14
+#define PeopleNum 20
 using namespace std;
 struct Competitors{
     char Number[10];
@@ -12,7 +12,8 @@ struct Competitors{
     char Class;
     char QQnumber[11];
     float AvgScore;
-    float StuScore[7];
+    float StuScore1[7];
+    float StuScore2[7];
 };
 struct Referees{
     char Name[10];
@@ -48,12 +49,13 @@ int main()
         {
             for(int j = 0; j < 7; j++)
             {
-                Competitors[i].StuScore[j] = Referees[j].Score[i];
+                Competitors[i].StuScore1[j] = Referees[j].Score[i];
+                Competitors[i].StuScore2[j] = Referees[j].Score[i];
             }
-            sort(Competitors[i].StuScore, Competitors[i].StuScore + 7, cmp1);
+            sort(Competitors[i].StuScore1, Competitors[i].StuScore1 + 7, cmp1);
             for(int k = 1; k < 6; k++)
             {
-                sum += Competitors[i].StuScore[k];
+                sum += Competitors[i].StuScore1[k];
             }
             Competitors[i].AvgScore = sum / 5;
             sum = 0;
@@ -100,7 +102,7 @@ int main()
             << left << setw(13) << Competitors[i].QQnumber <<" ";
             for(int j = 0; j < 7; j++)
             {
-                Result << left << setw(5)<< Referees[j].Score[i] << "    ";
+                Result << left << setw(5)<< Competitors[i].StuScore2[j] << "    ";
             }
             Result << left << setw(8) << setprecision(2)<< fixed << Competitors[i].AvgScore <<" ";
             Result << endl;
