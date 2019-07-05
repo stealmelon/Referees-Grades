@@ -8,7 +8,7 @@ struct Competitors{
     char Number[10];
     char Name[10];
     char Sex[10];
-    char Major[20];	
+    char Major[20];
     char Class;
     char QQnumber[11];
     float AvgScore;
@@ -24,7 +24,7 @@ bool cmp1(int a, int b)
 }
 bool cmp2(Competitors a, Competitors b)
 {
-	return a.AvgScore > b.AvgScore; 
+    return a.AvgScore > b.AvgScore;
 }
 int main()
 {
@@ -77,32 +77,32 @@ int main()
     {
         sort(Competitors, Competitors + PeopleNum, cmp2);
         Result << left << setw(5) << "Rank "
-	<< left << setw(5) << "Number "
+        << left << setw(5) << "Number "
         << left << setw(8) << "StuName "
         << left << setw(8) << "Sex "
         << left << setw(15) << "Major "
         << left << setw(3) << "Class "
-        << left << setw(13) << "QQnumber "
-        << left << setw(8) << "AvgScore ";
-	for(int i = 0; i < 7; i++)
+        << left << setw(13) << "QQnumber ";
+        for(int i = 0; i < 7; i++)
         {
             Result << left << setw(5) << Referees[i].Name << " ";
         }
+        Result << left << setw(8) << "AvgScore ";
         Result << endl;
         for(int i = 0; i < PeopleNum; i++)
         {
             Result << left << setw(5) << i + 1
-	    << left << setw(5) << Competitors[i].Number << " "
+            << left << setw(5) << Competitors[i].Number << " "
             << left << setw(8) << Competitors[i].Name <<" "
             << left << setw(8) << Competitors[i].Sex <<" "
             << left << setw(15) << Competitors[i].Major <<" "
             << left << setw(3) << Competitors[i].Class <<" "
-            << left << setw(13) << Competitors[i].QQnumber <<" "
-            << left << setw(8) << setprecision(2)<< fixed << Competitors[i].AvgScore <<" ";
-	    for(int j = 0; j < 7; j++)
+            << left << setw(13) << Competitors[i].QQnumber <<" ";
+            for(int j = 0; j < 7; j++)
             {
                 Result << left << setw(5)<< Referees[j].Score[i] << "    ";
             }
+            Result << left << setw(8) << setprecision(2)<< fixed << Competitors[i].AvgScore <<" ";
             Result << endl;
         }
         Result.close();
