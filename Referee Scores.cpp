@@ -2,7 +2,7 @@
 #include <fstream>
 #include <algorithm>
 #include <iomanip>
-#define PeopleNum 20
+#define PeopleNum 25
 using namespace std;
 struct Competitors{
     char Number[10];
