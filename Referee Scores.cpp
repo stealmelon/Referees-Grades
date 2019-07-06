@@ -102,9 +102,9 @@ int main()
             << left << setw(13) << Competitors[i].QQnumber <<" ";
             for(int j = 0; j < 7; j++)
             {
-                Result << left << setw(5)<< Competitors[i].StuScore2[j] << "    ";
+                Result << left << setw(5) << setprecision(2) << fixed << Competitors[i].StuScore2[j] << "    ";
             }
-            Result << left << setw(8) << setprecision(2)<< fixed << Competitors[i].AvgScore <<" ";
+            Result << left << setw(8) << setprecision(2) << fixed << Competitors[i].AvgScore <<" ";
             Result << endl;
         }
         Result.close();
