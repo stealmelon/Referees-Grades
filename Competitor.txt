@@ -3,7 +3,7 @@
 2018003  John  Male    Computer  2   13764785478
 2018004  Brown Male    Accounting 2  15573894767
 2018005  Sarah Female  Computer   3  19873636475
-2018006  Amy   Female  Art        8   45637389372
+2018006  Amy   Female  Art        1   45637389372
 2018007  Mike  Male    Computer   6   35674653425
 2018008  Nike  Female  Computer   8   87354647893
 2018009  Hercy Male    Accounting 7   35476547897
@@ -11,11 +11,16 @@
 2018011  Bakei Male    Accounting 9   76546576645
 2018012  Peb   Female  Computer   6   43546765438
 2018013  Herry Male    Computer   7   34465754367
-2018014  Gerry Male    Art        9   88456575456
+2018014  Gerry Male    Art        1   88456575456
 2018015  Charles Male  Music      6   56478321389
 2018016  Mark    Male  Computer   5    67785634869
-2018017  James   Female Art       3    48465484654
+2018017  James   Female Art       1    48465484654
 2018018  Bush    Male   Accounting 9   51354681321
 2018019  Joseph  Female Music      1   21354654885
 2018020  Martin  Female Computer  7   98798456465
+2018021  Mab     Male   Computer  7   89457984375
+2018022  Pat     Male   Music     1   73462876585
+2018023  Mak     Female Art       1   34268637677
+2018024  Yet     Male   Computer  4   23874646747
+2018025  Alter   Female Computer  7   87324665747
 
